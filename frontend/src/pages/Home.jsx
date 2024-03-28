@@ -9,6 +9,7 @@ import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md";
 
 const Home = () => {
   const [books, setBooks] = useState([]);
+  const [count, setCount] = useState(0);
 
   const [loading, setLoading] = useState(false);
 
@@ -19,6 +20,7 @@ const Home = () => {
       .then((response) => {
         //console.log(response);
         setBooks(response.data.data);
+        setCount(response.data.count);
 
         setLoading(false);
       })
@@ -30,6 +32,7 @@ const Home = () => {
   return (
     <div p-4>
       <div className="flex justify-between items-center p-2 ">
+        <h1 className="text-3xl">{count}</h1>
         <h1 className="text-3xl my-8"> AmDAker List</h1>
         <Link to="/books/create">
           <MdOutlineAddBox className="text-sky-800 text-4xl" />
