@@ -23,6 +23,7 @@ const EditBook = () => {
         setLoading(false);
       })
       .catch((error) => {
+        alert("Something went wrong");
         console.log(error);
         setLoading(false);
       });
@@ -36,7 +37,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .post("http://localhost:3000/books", data)
+      .put(`http://localhost:3000/books/${id}`, data)
       .then(() => {
         setLoading(false);
         navigate("/");
@@ -51,7 +52,7 @@ const EditBook = () => {
   return (
     <div className="p-4">
       <BackButton />
-      <h1 className="text-3xl my-4">Edit AmDAker</h1>
+      <h1 className="text-3xl my-4">Edit Dpos</h1>
       {loading ? <Spinner /> : ""}
 
       <div className=" flex flex-col border-2 border-sky-400 w-[600px] p-4 mx-auto">

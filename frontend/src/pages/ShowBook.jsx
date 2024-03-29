@@ -27,7 +27,7 @@ const ShowBook = () => {
   return (
     <div className="p-4 ml-5 mt-5">
       <BackButton />
-      <h1 className="text-2xl pt-2 pb-2">Show AmDAker</h1>
+      <h1 className="text-2xl pt-2 pb-2">Show Dpos</h1>
       {loading ? (
         <Spinner />
       ) : (
