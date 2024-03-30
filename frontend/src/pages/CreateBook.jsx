@@ -29,7 +29,7 @@ const CreateBook = () => {
       })
       .catch((error) => {
         setLoading(false);
-        alert("Something went wrong");
+        enqueueSnackbar("Something went wrong", { variant: "error" });
         console.log(error);
       });
   };
